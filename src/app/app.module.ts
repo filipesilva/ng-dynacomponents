@@ -8,13 +8,14 @@ import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { Reducers } from './states';
 import { WizardComponent } from './wizard';
-import { StepOneComponent } from './steps';
+import { StepOneComponent, StepTwoComponent } from './steps';
 
 @NgModule({
   declarations: [
     AppComponent,
     WizardComponent,
-    StepOneComponent
+    StepOneComponent,
+    StepTwoComponent
   ],
   imports: [
     BrowserModule,
