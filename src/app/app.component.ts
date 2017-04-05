@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { slideInDownAnimation } from './animations';
 
 @Component({
@@ -14,6 +14,8 @@ export class AppComponent {
   // @HostBinding('style.position')  position = 'absolute';
   @HostBinding('style.backgroundColor') backgroundColor = 'blue';
   @HostBinding('style.color') color = 'white';
+
+  @Input() param;
 
   title = 'Hi Mateo!';
 }
