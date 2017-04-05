@@ -10,10 +10,10 @@ import { WizardAction } from './states';
 })
 export class AppComponent {
   @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.padding') padding = '20px';
+  @HostBinding('style.padding') padding = '50px 0';
   @HostBinding('style.display')   display = 'block';
   // @HostBinding('style.position')  position = 'absolute';
-  @HostBinding('style.backgroundColor') backgroundColor = 'blue';
+  @HostBinding('style.backgroundColor') backgroundColor = '#1976D2';
   @HostBinding('style.color') color = 'white';
 
   @Input() param;

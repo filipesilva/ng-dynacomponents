@@ -7,10 +7,12 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { Reducers } from './states';
+import { WizardComponent } from './wizard';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WizardComponent
   ],
   imports: [
     BrowserModule,
