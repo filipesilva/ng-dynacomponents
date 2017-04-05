@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+import { slideInDownAnimation } from './animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [ slideInDownAnimation ]
 })
 export class AppComponent {
-  title = 'app works!';
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.padding') padding = '20px';
+  @HostBinding('style.display')   display = 'block';
+  // @HostBinding('style.position')  position = 'absolute';
+  @HostBinding('style.backgroundColor') backgroundColor = 'blue';
+  @HostBinding('style.color') color = 'white';
+
+  title = 'Hi Mateo!';
 }
