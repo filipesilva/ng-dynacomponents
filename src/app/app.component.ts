@@ -1,5 +1,6 @@
 import { Component, HostBinding, Input } from '@angular/core';
 import { slideInDownAnimation } from './animations';
+import { WizardAction } from './states';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +19,7 @@ export class AppComponent {
   @Input() param;
 
   title = 'Hi Mateo!';
+
+  actions: WizardAction[] = [];
+  haveFooter: boolean = true;
 }
