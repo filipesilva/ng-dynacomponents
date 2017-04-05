@@ -25,6 +25,10 @@ import { StepOneComponent, StepTwoComponent } from './steps';
     HttpModule,
     StoreModule.provideStore(Reducers),
   ],
+  entryComponents: [
+    StepOneComponent,
+    StepTwoComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

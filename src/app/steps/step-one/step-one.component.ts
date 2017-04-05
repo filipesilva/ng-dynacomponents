@@ -17,7 +17,7 @@ export class StepOneComponent {
   @HostBinding('style.backgroundColor') backgroundColor = '#563d7c';
   @HostBinding('style.color') color = 'white';
 
-  @Input() param;
+  @Input() exec;
 
   actions: WizardAction[] = [];
   haveFooter: boolean = true;

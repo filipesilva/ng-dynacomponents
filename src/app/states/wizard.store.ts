@@ -1,12 +1,12 @@
 import { Type } from '@angular/core';
 import { Action, ActionReducer } from '@ngrx/store';
 // import { WizardStepComponent } from '../wizard';
-// import { InitialStepComponent } from '../steps';
+import { StepOneComponent } from '../steps';
 
 
 // STATE
 export interface WizardState {
-  component?: Type<any>  // WizardStepComponent
+  component: Type<any>  // StepOneComponent
 }
 
 export interface WizardFunction {
@@ -15,7 +15,7 @@ export interface WizardFunction {
 
 export interface WizardAction {
   text: string,
-  action: any,  // WizardStepComponent || WizardFunction
+  action: any,  // StepOneComponent || WizardFunction
   classes: string[]
   hidden?: boolean,
   disabled?: boolean
@@ -24,7 +24,7 @@ export interface WizardAction {
 
 // INITIAL STATE
 const initial: WizardState = {
-//   component: InitialStepComponent
+  component: StepOneComponent
 }
 
 
