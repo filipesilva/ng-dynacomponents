@@ -18,7 +18,7 @@ export class AppComponent {
 
   @Input() param;
 
-  title = 'Hi Mateo!';
+  title = 'Hi Animation!';
 
   actions: WizardAction[] = [];
   haveFooter: boolean = true;
