@@ -28,6 +28,29 @@ export class WizardComponent implements AfterContentInit, DoCheck, OnDestroy {
       });
   }
 
+  exec(action) {
+    if (action.prototype/* && action.prototype instanceof WizardStepComponent*/) {
+      this._store.dispatch({
+        type: 'STEP_LOAD',
+        payload: action
+      });
+    } else if (typeof action == 'function') {
+      let result = action();
+      if (result) {
+        if (result.prototype/* && result.prototype instanceof WizardStepComponent*/) {
+          this._store.dispatch({
+            type: 'STEP_LOAD',
+            payload: result
+          });
+        } else if (typeof result == 'object' && result.hasOwnProperty('type')) {
+          this._store.dispatch(result);
+        }
+      }
+    } else if (typeof action == 'object' && action.hasOwnProperty('type')) {
+      this._store.dispatch(action);
+    }
+  }
+
   dispatch(action) {
     this._store.dispatch(action);
   }
@@ -52,13 +75,15 @@ export class WizardComponent implements AfterContentInit, DoCheck, OnDestroy {
       this.step.destroy();
     }
 
-    let componentFactory = this._componentFactoryResolver.resolveComponentFactory(this.state.component);
+    setTimeout(() => {
+      let componentFactory = this._componentFactoryResolver.resolveComponentFactory(this.state.component);
 
-    let viewContainerRef = this.stepHost.viewContainerRef;
-    viewContainerRef.clear();
+      let viewContainerRef = this.stepHost.viewContainerRef;
+      viewContainerRef.clear();
 
-    this.step = viewContainerRef.createComponent(componentFactory);
-    (<StepOneComponent>this.step.instance).exec = this.dispatch.bind(this);
+      this.step = viewContainerRef.createComponent(componentFactory);
+      (<StepOneComponent>this.step.instance).exec = this.exec.bind(this);
+    }, 510);
   }
 
 }

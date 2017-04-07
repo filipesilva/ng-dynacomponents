@@ -1,16 +1,17 @@
 import { Component, HostBinding, Input  } from '@angular/core';
-import { slideInDownAnimation } from '../../animations';
+import { SlideAnimation } from '../../animations';
 import { WizardAction } from '../../states';
+import { StepTwoComponent } from '../../steps';
 
 @Component({
   selector: 'step-one',
   templateUrl: './step-one.component.html',
   styleUrls: ['./step-one.component.css'],
-  animations: [ slideInDownAnimation ]
+  animations: [ SlideAnimation ]
 })
 export class StepOneComponent {
 
-  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('@slideAnimation') slideAnimation = true;
   @HostBinding('style.display')   display = 'block';
   @HostBinding('style.padding')   padding = '20px';
   // @HostBinding('style.position')  position = 'absolute';
@@ -22,6 +23,14 @@ export class StepOneComponent {
   actions: WizardAction[] = [];
   haveFooter: boolean = true;
 
-  constructor() { }
+  constructor() {
+    this.actions = [
+      {
+        text: 'Next',
+        action:  StepTwoComponent,
+        classes: ['btn-primary', 'float-right']
+      }
+    ];
+  }
 
 }

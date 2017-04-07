@@ -10,7 +10,7 @@
 }
 
 .card-block {
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .card-footer {

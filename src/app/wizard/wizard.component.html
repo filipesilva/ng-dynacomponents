@@ -2,11 +2,11 @@
   <div class="card-block">
     <ng-template wizard-step></ng-template>
   </div>
-  <!-- <div *ngIf="step" class="card-footer" [hidden]="!step.instance.haveFooter">
+  <div *ngIf="step" class="card-footer" [hidden]="!step.instance.haveFooter">
     <button *ngFor="let action of step.instance.actions" type="button"
       class="btn" [ngClass]="action.classes"
       [disabled]="action.disabled"
       [hidden]="action.hidden"
       (click)="exec(action.action)">{{ action.text }}</button>
-  </div> -->
+  </div>
 </div>
