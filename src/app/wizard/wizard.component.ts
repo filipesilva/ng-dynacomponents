@@ -61,7 +61,7 @@ export class WizardComponent implements AfterContentInit, DoCheck, OnDestroy {
 
   ngDoCheck() {
     // manual check on component change
-    if (this.step && this.step.instance.constructor.name != this.state.component.name) {
+    if (this.step && this.step.instance.constructor.componentName != this.state.component.componentName) {
       this.loadStep();
     }
   }

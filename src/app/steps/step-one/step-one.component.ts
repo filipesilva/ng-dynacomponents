@@ -10,6 +10,7 @@ import { StepTwoComponent } from '../../steps';
   animations: [ SlideAnimation ]
 })
 export class StepOneComponent {
+  static componentName = 'StepOneComponent';
 
   @HostBinding('@slideAnimation') slideAnimation = true;
   @HostBinding('style.display')   display = 'block';

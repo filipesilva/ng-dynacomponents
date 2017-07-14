@@ -6,7 +6,7 @@ import { StepOneComponent } from '../steps';
 
 // STATE
 export interface WizardState {
-  component: Type<any>  // StepOneComponent
+  component: any  // StepOneComponent
 }
 
 export interface WizardFunction {
